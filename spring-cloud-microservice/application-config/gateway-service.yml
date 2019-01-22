@@ -1,0 +1,52 @@
+spring:
+  application:
+    name: gateway-service
+
+eureka:
+  client:
+    fetch-registry: true
+    service-url:
+      defaultZone: http://luandeptrai.com:9000/eureka
+  instance:
+    appname: ${spring.application.name}
+
+zuul:
+  routes:
+    eureka-server:
+      path: /eureka-server/**
+      url: http://luandeptrai.com:9000
+      sensitive-headers: Set-Cookie,Authorization
+    demo-one-service:
+      path: /demo-one-service/**
+      sensitive-headers: Set-Cookie,Authorization
+    demo-two-service:
+      path: /demo-two-service/**
+      sensitive-headers: Set-Cookie,Authorization
+    demo-three-service:
+      path: /demo-three-service/**
+      sensitive-headers: Set-Cookie,Authorization
+hystrix:
+  command:
+    eureka-server:
+      execution:
+        isolation:
+          thread:
+            timeout-in-milliseconds: 600000
+    demo-one-service:
+      execution:
+        isolation:
+          thread:
+            timeout-in-milliseconds: 600000
+    demo-two-service:
+      execution:
+        isolation:
+          thread:
+            timeout-in-milliseconds: 600000
+    demo-three-service:
+      execution:
+        isolation:
+          thread:
+            timeout-in-milliseconds: 600000
+
+server:
+  port: 8080
