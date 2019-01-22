@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: demo-three-service
+eureka:
+  instance:
+    appname: ${spring.application.name}
+  client:
+    fetch-registry: true
+    service-url:
+      defaultZone: http://luandeptrai.com:9000/eureka
+server:
+  port: 8002

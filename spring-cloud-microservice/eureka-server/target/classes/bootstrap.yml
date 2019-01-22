@@ -1,0 +1,5 @@
+spring:
+  cloud:
+    config:
+      name: eureka-server
+      uri: http://luandeptrai.com:8083

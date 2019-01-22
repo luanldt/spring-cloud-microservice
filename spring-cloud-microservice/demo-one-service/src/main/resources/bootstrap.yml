@@ -1,0 +1,5 @@
+spring:
+  cloud:
+    config:
+      name: demo-one-service
+      uri: http://luandeptrai.com:8083

@@ -1,0 +1,18 @@
+server:
+  port: 8083
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      profile: default
+      server:
+        git:
+          uri: file:///data1/DEMO/Java/spring-cloud-microservice/application-config
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://luandeptrai.com:9000/eureka/
+    registry-fetch-interval-seconds: 5
+    region: default
