@@ -25,6 +25,10 @@ zuul:
     demo-three-service:
       path: /demo-three-service/**
       sensitive-headers: Set-Cookie,Authorization
+    admin-server:
+      path: /admin-server/**
+      url: http://luandeptrai.com:8005
+      sensitive-headers: Set-Cookie,Authorization
 hystrix:
   command:
     eureka-server:

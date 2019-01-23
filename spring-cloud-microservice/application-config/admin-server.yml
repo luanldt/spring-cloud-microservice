@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: admin-server
+  boot:
+    admin:
+      ui:
+        public-url: http://luandeptrai.com:8080/${spring.application.name}
+      notify:
+        mail:
+          to: luanldt1905@gmail.com
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    properties:
+      mail:
+        smtp:
+          starttls:
+            enable: true
+            required: true
+          auth: true
+    username: luanldt1905@gmail.com
+    password: minhluan
+eureka:
+  instance:
+    appname: ${spring.application.name}
+  client:
+    fetch-registry: true
+    service-url:
+      defaultZone: http://luandeptrai.com:9000/eureka
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+server:
+  port: 8005
+
