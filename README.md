@@ -8,6 +8,7 @@ Example Spring Cloud Microservice
 4. Demo Two Service
 5. Demo Three Service
 6. Gateway Service
+7. Admin Server
 
 
 ## Thanks to:
