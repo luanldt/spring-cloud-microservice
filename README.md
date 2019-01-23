@@ -8,3 +8,7 @@ Example Spring Cloud Microservice
 4. Demo Two Service
 5. Demo Three Service
 6. Gateway Service
+
+
+## Thanks to:
++ https://dzone.com/articles/microservices-using-spring-boot-amp-spring-cloud-p
