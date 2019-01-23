@@ -12,3 +12,5 @@ Example Spring Cloud Microservice
 
 ## Thanks to:
 + https://dzone.com/articles/microservices-using-spring-boot-amp-spring-cloud-p
++ https://o7planning.org/vi/11701/spring-cloud
++ https://github.com/ewolff/microservice-kafka
