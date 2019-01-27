@@ -1,8 +1,6 @@
 package com.luandeptrai.demooneservice.controllers;
 
-import com.netflix.appinfo.InstanceInfo;
-import com.netflix.discovery.shared.Application;
-import com.netflix.discovery.shared.Applications;
+import com.luandeptrai.demooneservice.clients.DemoTwoClient;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
@@ -13,9 +11,12 @@ import java.util.List;
 public class MainController {
 
     private final DiscoveryClient discoveryClient;
+    private final DemoTwoClient demoTwoClient;
 
-    public MainController(DiscoveryClient discoveryClient) {
+    public MainController(DiscoveryClient discoveryClient,
+                          DemoTwoClient demoTwoClient) {
         this.discoveryClient = discoveryClient;
+        this.demoTwoClient = demoTwoClient;
     }
 
     @ResponseBody
@@ -67,6 +68,8 @@ public class MainController {
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
     public String hello() {
 
-        return "<html>Hello from Demo One Service</html>";
+        String html = "<html>Hello from Demo One Service</html>";
+        html += demoTwoClient.hello();
+        return html;
     }
 }
